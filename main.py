@@ -1,4 +1,7 @@
 import os
+from creacionTablero import *
+
+
 print("""
 ╔═════════════════════════════════════════════════╗
 ║                   BIENVENIDO...                 ║                                                
@@ -18,7 +21,7 @@ while opcion != 5:
 
     print("------------------   MENU   ------------------\n\n")
     print("""
-    1.  Cargar archivo de entrada
+    1.  Elegir Tama;o del tablero
     2.  Gráfica
     5.  Salir
     """)
@@ -26,8 +29,16 @@ while opcion != 5:
 
     match opcion:
 
-        # Caraga de archivos a memoria
         case 1:
+            os.system ("cls") 
+            print("------------------   TABLERO   ------------------\n\n")
+
+            print("Recuerda que el maximo de columnas y filas es de 10 mil\n")
+            columnas = int(input("Cuantas Columnas desea: "))
+            filas = int(input("Cuantas Filas desea: "))
+
+            tablero(columnas, filas)
+
             pass
 
         case 2:
