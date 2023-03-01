@@ -3,6 +3,12 @@ from clasesDatos import *
 from nodo import *
 
 
+listaCelulas = lista()
+
+
+def get_listaCelulas():
+    return listaCelulas
+
 
 
 def cargaArchivo():
@@ -12,7 +18,6 @@ def cargaArchivo():
 
 
     contador = 1
-    listaCelulas = lista()
 
 
     for organismo in root.findall(".//organismo"):
@@ -41,4 +46,5 @@ def cargaArchivo():
             nuevas_celdaViva = celulasVivas(filaCelulaViva, columnaCelulaViva, codigoOrganismoVivo)
             listaCelulas.agregar(nuevas_celdaViva)
 
-    listaCelulas.recorrer()
+    
+

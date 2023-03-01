@@ -61,5 +61,28 @@
                 </celdaViva>
             </listadoCeldasVivas>
         </muestra>
+        <muestra>
+            <codigo>muestra3</codigo>
+            <descripcion>esta es la muestra 3</descripcion>
+            <filas>15</filas>
+            <columnas>10</columnas>
+            <listadoCeldasVivas>
+                <celdaViva>
+                    <fila>7</fila>
+                    <columna>5</columna>
+                    <codigoOrganismo>organismo1</codigoOrganismo>
+                </celdaViva>
+                <celdaViva>
+                    <fila>6</fila>
+                    <columna>6</columna>
+                    <codigoOrganismo>organismo1</codigoOrganismo>
+                </celdaViva>
+                <celdaViva>
+                    <fila>5</fila>
+                    <columna>7</columna>
+                    <codigoOrganismo>organismo1</codigoOrganismo>
+                </celdaViva>
+            </listadoCeldasVivas>
+        </muestra>
     </listadoMuestras>
 </datosMarte>

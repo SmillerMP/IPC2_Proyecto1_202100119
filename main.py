@@ -1,7 +1,7 @@
 import os
 from creacionTablero import *
-from carga import *
 from nodo import *
+from carga import *
 
 listaCelulas = lista()
 
@@ -47,13 +47,13 @@ while opcion != 5:
         case 2:
 
             cargaArchivo()
-            
-            listaCelulas.recorrer()
-            pintarTablero(3, 4, 5)
+            listaCelulas = get_listaCelulas()
+            listaCelulas.pintar()
+        
+
+            #pintarTablero(3, 4, 5)
 
             input()
-            pass
-
             
         case 5:
             break

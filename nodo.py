@@ -8,7 +8,7 @@ class nodo():
         self.siguiente = siguiente
 
 
-class lista:
+class lista():
     def __init__(self):
         self.primero = None
         self.ultimo = None
@@ -17,6 +17,7 @@ class lista:
     def vacio(self):
         return self.primero == None
     
+
     def agregar(self, dato):
         if self.vacio() == True:
             self.primero = self.ultimo = nodo(dato)
@@ -30,6 +31,7 @@ class lista:
         aux = self.primero
         while aux != None:
             print("Fila:", aux.dato.fila_CelulaViva, "Columna:",aux.dato.columna_CelulaViva, "Codigo:",aux.dato.codigo_CelulaViva)
+            print("hola")
             aux = aux.siguiente
 
 
@@ -37,7 +39,7 @@ class lista:
     def pintar(self):
         aux = self.primero
         while aux != None:
-            print(aux.dato.fila_CelulaViva, aux.dato.columna_CelulaViva, aux.dato.codigo_CelulaViva)
+            #print(aux.dato.fila_CelulaViva, aux.dato.columna_CelulaViva, aux.dato.codigo_CelulaViva)
             pintarTablero(aux.dato.fila_CelulaViva, aux.dato.columna_CelulaViva, aux.dato.codigo_CelulaViva)
             aux = aux.siguiente
 
