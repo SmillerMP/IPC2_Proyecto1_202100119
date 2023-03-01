@@ -1,6 +1,9 @@
 import os
 from creacionTablero import *
+from carga import *
+from nodo import *
 
+listaCelulas = lista()
 
 print("""
 ╔═════════════════════════════════════════════════╗
@@ -39,12 +42,20 @@ while opcion != 5:
 
             tablero(columnas, filas)
 
-            pass
+           
 
         case 2:
-           pass
+
+            cargaArchivo()
+            
+            listaCelulas.recorrer()
+            pintarTablero(3, 4, 5)
+
+            input()
+            pass
 
             
         case 5:
             break
+
                 

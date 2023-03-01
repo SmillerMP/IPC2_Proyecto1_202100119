@@ -1,5 +1,35 @@
 import os
 
+
+def pintarTablero(fila, columna, codigo):
+
+    nombreNodo = "F" + str(fila-1) + "C" + str(columna-1)
+    color = None
+    if codigo == "organismo3":
+        color = "yellow"
+
+    elif codigo == "organismo2":
+        color = "red"
+    
+    else:
+        color = "blue"
+
+    # Lee el archivo y cuenta cuantas lineas tiene el archivo 
+    tablero_dot = open("tablero.dot", "r")
+    archivoDot = tablero_dot.readlines()
+
+    numeroLineas = len(archivoDot)
+
+    # Incerta en la lista archivoDot las nuevas lineas en una posicion antes de cerrar el archivo
+    #lineasNuevas= [nombreNodo + '[color =' + color + ', style = filled \n']
+    lineasNuevas = ["hola\n", "samuel\n"]
+    archivoDot.insert(numeroLineas - 2, ''.join(lineasNuevas))
+
+    tablero_dot = open("tablero.dot", "w")
+    tablero_dot.writelines(archivoDot)
+
+
+
 def tablero(columnas, filas):
 
     # Ruta del archivo de graphviz
@@ -40,9 +70,10 @@ def tablero(columnas, filas):
 
         tablero_dot.write("} \n")
     
-        
+
+    tablero_dot.write("\n\n")     
 
 
 
-    tablero_dot.write("} \n")
+    tablero_dot.write("}")
     tablero_dot.close()
