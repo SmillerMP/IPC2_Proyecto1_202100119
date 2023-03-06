@@ -3,7 +3,6 @@ import os
 
 def pintarTablero(fila, columna, codigo):
 
-    print(type(fila), fila)
 
     nombreNodo = "F" + str(fila) + "C" + str(columna)
     color = None
@@ -16,6 +15,7 @@ def pintarTablero(fila, columna, codigo):
     else:
         color = "blue"
 
+    
     # Lee el archivo y cuenta cuantas lineas tiene el archivo 
     tablero_dot = open("tablero.dot", "r")
     archivoDot = tablero_dot.readlines()
@@ -29,6 +29,41 @@ def pintarTablero(fila, columna, codigo):
 
     tablero_dot = open("tablero.dot", "w")
     tablero_dot.writelines(archivoDot)
+
+
+
+
+def tableroDinamico(filaMax, columnaMax):
+    # Ruta del archivo de graphviz
+    tablero_dot = open("tablero.dot", "w")
+    tablero_dot.write('graph { \n')
+    tablero_dot.write('rankdir = TB \n' )
+    tablero_dot.write('node[shape= rect, fontname = "Arial", fontsize = 14] \n')
+
+    # Crea las conexiones de manera vertical
+    for x in range(1, columnaMax+2):
+        for y in range(1,filaMax+1):
+            tablero_dot.write("F" + str(y) + "C" + str(x) + " -- " + "F" + str(y+1) + "C" + str(x) + "\n")
+    
+        tablero_dot.write("\n")
+
+
+    tablero_dot.write("/*------------ Encuadre ------------*/\n")
+    for y in range(1,filaMax+2):
+        tablero_dot.write("{rank = same")
+        for x in range(1,columnaMax+2):
+            tablero_dot.write("; F" + str(y) + "C" + str(x))
+
+        tablero_dot.write("} \n")
+    
+
+    tablero_dot.write("\n\n")     
+
+    tablero_dot.write("}")
+    tablero_dot.close()
+
+
+
 
 
 
@@ -82,3 +117,7 @@ def tablero(columnas, filas):
     tablero_dot.write("}")
     tablero_dot.close()
 
+
+def crearPdf():
+    os.system("dot.exe -Tpdf tablero.dot -o  tablero.pdf")
+    

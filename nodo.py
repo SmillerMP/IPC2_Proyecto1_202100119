@@ -1,4 +1,4 @@
-from creacionTablero import pintarTablero
+from creacionTablero import *
 from clasesDatos import *
 
 class nodo():
@@ -36,11 +36,45 @@ class lista():
 
 
 
-    def pintar(self):
+    def tablero(self):
+        filaMax = 0
+        columnaMax = 0
         aux = self.primero
         while aux != None:
-            #print(aux.dato.fila_CelulaViva, aux.dato.columna_CelulaViva, aux.dato.codigo_CelulaViva)
+
+            aux.dato.fila_CelulaViva = int(aux.dato.fila_CelulaViva)
+            aux.dato.columna_CelulaViva = int(aux.dato.columna_CelulaViva)
+
+            if filaMax < aux.dato.fila_CelulaViva:
+                filaMax = aux.dato.fila_CelulaViva
+
+            if columnaMax < aux.dato.columna_CelulaViva:
+                columnaMax = aux.dato.columna_CelulaViva
+
+            aux = aux.siguiente
+        
+        print(filaMax, columnaMax)
+        
+        tableroDinamico(filaMax, columnaMax)
+
+        aux = self.primero
+        while aux != None:
             pintarTablero(aux.dato.fila_CelulaViva, aux.dato.columna_CelulaViva, aux.dato.codigo_CelulaViva)
+            aux = aux.siguiente
+
+
+    
+    def experimento(self, fila, columna, codigo):
+        aux = self.primero
+        while aux != None:
+            aux.dato.fila_CelulaViva = int(aux.dato.fila_CelulaViva)
+            aux.dato.columna_CelulaViva = int(aux.dato.columna_CelulaViva)
+
+            if (fila == aux.dato.fila_CelulaViva) and (columna < aux.dato.columna_CelulaViva) :
+
+                
+             pass
+
             aux = aux.siguiente
 
 

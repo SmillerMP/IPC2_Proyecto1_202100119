@@ -45,7 +45,7 @@
             <columnas>10</columnas>
             <listadoCeldasVivas>
                 <celdaViva>
-                    <fila>4</fila>
+                    <fila>5</fila>
                     <columna>3</columna>
                     <codigoOrganismo>organismo1</codigoOrganismo>
                 </celdaViva>
@@ -79,7 +79,7 @@
                 </celdaViva>
                 <celdaViva>
                     <fila>5</fila>
-                    <columna>7</columna>
+                    <columna>11</columna>
                     <codigoOrganismo>organismo1</codigoOrganismo>
                 </celdaViva>
             </listadoCeldasVivas>

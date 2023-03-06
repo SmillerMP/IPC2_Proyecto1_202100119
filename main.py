@@ -48,7 +48,7 @@ while opcion != 5:
 
             cargaArchivo()
             listaCelulas = get_listaCelulas()
-            listaCelulas.pintar()
+            listaCelulas.tablero()
         
 
             #pintarTablero(3, 4, 5)
