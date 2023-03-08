@@ -17,9 +17,6 @@ def cargaArchivo():
     root = tree.getroot()
 
 
-    contador = 1
-
-
     for organismo in root.findall(".//organismo"):
         codigo = organismo.find("codigo").text
         nombre = organismo.find("nombre").text
@@ -45,6 +42,7 @@ def cargaArchivo():
 
             nuevas_celdaViva = celulasVivas(filaCelulaViva, columnaCelulaViva, codigoOrganismoVivo)
             listaCelulas.agregar(nuevas_celdaViva)
+
 
     
 

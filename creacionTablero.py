@@ -1,20 +1,19 @@
 import os
 
+codigos_asignados = {}
+colores_disponibles = ['red', 'green', 'blue', 'yellow', 'orange', 'brown', 'blac', 'pink', 'chartreuse', 'darkorchid1', 'deepskyblue', 'gold3', 'gold1', 'firebrick1', 'blueviolet', 'aquamarine']
+
+def asignar_color(codigo):
+    if codigo in codigos_asignados:
+        return codigos_asignados[codigo]
+    color = colores_disponibles.pop(0)
+    codigos_asignados[codigo] = color
+    return color
 
 def pintarTablero(fila, columna, codigo):
 
-
     nombreNodo = "F" + str(fila) + "C" + str(columna)
     color = None
-    if codigo == "organismo3":
-        color = "yellow"
-
-    elif codigo == "organismo2":
-        color = "red"
-    
-    else:
-        color = "blue"
-
     
     # Lee el archivo y cuenta cuantas lineas tiene el archivo 
     tablero_dot = open("tablero.dot", "r")
@@ -23,7 +22,7 @@ def pintarTablero(fila, columna, codigo):
     numeroLineas = len(archivoDot)
 
     # Incerta en la lista archivoDot las nuevas lineas en una posicion antes de cerrar el archivo
-    lineasNuevas= [nombreNodo + '[color =' + color + ', style = filled]\n']
+    lineasNuevas= [nombreNodo + '[color =' + asignar_color(codigo) + ', style = filled]\n']
     #lineasNuevas = ["hola\n", "samuel\n"]
     archivoDot.insert(numeroLineas - 2, ''.join(lineasNuevas))
 
@@ -116,8 +115,10 @@ def tablero(columnas, filas):
 
     tablero_dot.write("}")
     tablero_dot.close()
+    crearPdf()
 
 
 def crearPdf():
     os.system("dot.exe -Tpdf tablero.dot -o  tablero.pdf")
     
+

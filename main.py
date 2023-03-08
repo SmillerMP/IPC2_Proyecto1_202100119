@@ -4,6 +4,7 @@ from nodo import *
 from carga import *
 
 listaCelulas = lista()
+listaCelulas2 = lista()
 
 print("""
 ╔═════════════════════════════════════════════════╗
@@ -24,8 +25,8 @@ while opcion != 5:
 
     print("------------------   MENU   ------------------\n\n")
     print("""
-    1.  Elegir Tama;o del tablero
-    2.  Gráfica
+    1.  Elegir Tamaño del tablero
+    2.  Graficar Tablero
     5.  Salir
     """)
     opcion = int(input("\n Ingrese el numero de la opcion y presione enter: "))
@@ -37,8 +38,20 @@ while opcion != 5:
             print("------------------   TABLERO   ------------------\n\n")
 
             print("Recuerda que el maximo de columnas y filas es de 10 mil\n")
+
             columnas = int(input("Cuantas Columnas desea: "))
             filas = int(input("Cuantas Filas desea: "))
+
+            while True:
+
+                if columnas > 10000 or filas > 10000:
+                    print("Las filas y/o columnas no pueden ser mayor de 10000, vuelve a ingresar los datos \n")
+                    columnas = int(input("Cuantas Columnas desea: "))
+                    filas = int(input("Cuantas Filas desea: "))
+                
+                else:
+                    break
+            
 
             tablero(columnas, filas)
 
@@ -49,13 +62,15 @@ while opcion != 5:
             cargaArchivo()
             listaCelulas = get_listaCelulas()
             listaCelulas.tablero()
-        
+            crearPdf()
 
+            #listaCelulas.experimento(fila_experimento, columna_experimento, codigo_experimento)
             #pintarTablero(3, 4, 5)
 
-            input()
+
             
         case 5:
+            print("Gracias Por usar el programa :D")
             break
 
                 

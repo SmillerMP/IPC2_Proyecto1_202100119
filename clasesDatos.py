@@ -8,14 +8,14 @@ class celulasVivas():
         self.codigo_CelulaViva = codigo_CelulaViva
 
 
-    # def get_fila_CelulaViva(self):
-    #     return self.fila_CelulaViva
+    def get_fila_CelulaViva(self):
+        return self.fila_CelulaViva
 
-    # def get_columna_CelulaViva(self):
-    #     return self.columna_CelulaViva
+    def get_columna_CelulaViva(self):
+        return self.columna_CelulaViva
     
-    # def get_codigo_CelulaViva(self):
-    #     return self.codigo_CelulaViva
+    def get_codigo_CelulaViva(self):
+        return self.codigo_CelulaViva
 
 
 class muestra():
